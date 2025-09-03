@@ -1,5 +1,7 @@
 package adt.bst;
 
+import adt.bt.BTNode;
+
 public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
 	protected BSTNode<T> root;
@@ -31,8 +33,30 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 
 	@Override
 	public void insert(T element) {
-		// TODO Auto-generated method stub
-		throw new UnsupportedOperationException("Not implemented yet!");
+		if (isEmpty() && element != null) {
+			BSTNode<T> newNode = new BSTNode<>();
+			newNode.setData(element);
+			newNode.setLeft(new BSTNode<T>());
+			newNode.setRight(new BSTNode<T>());
+			this.root = newNode;
+		} else {
+			recursiveInsert(this.root, element);
+		}
+	}
+
+	private void recursiveInsert(BTNode<T> node, T element) {
+		if (element.compareTo(node.getData()) < 1) {
+			if (node.getLeft().isEmpty()) {
+				BSTNode<T> newNode = new BSTNode<>();
+				newNode.setData(element);
+				newNode.setLeft(new BSTNode<>());
+				newNode.setRight(new BSTNode<>());
+				newNode.setParent(node);
+				node.setLeft(newNode);
+			} else {
+				recursiveInsert(node.getLeft(), element);
+			}
+		}
 	}
 
 	@Override
