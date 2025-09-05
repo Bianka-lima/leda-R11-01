@@ -81,7 +81,7 @@ public class SimpleBSTManipulationImpl<T extends Comparable<T>> implements Simpl
 			} else if (k < sizeLeft){
 				element = recursiveStatistic((BSTNode<T>)node.getLeft(), k);
 			} else {
-				element = recursiveStatistic((BSTNode<T>)node.getRight(), k -sizeLeft-1);
+				element = recursiveStatistic((BSTNode<T>)node.getRight(), k - (sizeLeft+1));
 			}
 		}
 		return element;

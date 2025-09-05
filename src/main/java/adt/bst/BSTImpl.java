@@ -163,7 +163,6 @@ public class BSTImpl<T extends Comparable<T>> implements BST<T> {
 	private void recursiveRemove(BSTNode<T> node) {
 		if (node != null && !node.isEmpty()) {
 			if (node.isLeaf()) {
-				//node = new BSTNode<T>();
 				node.setData(null);
 				node.setLeft(null);
 				node.setRight(null);
