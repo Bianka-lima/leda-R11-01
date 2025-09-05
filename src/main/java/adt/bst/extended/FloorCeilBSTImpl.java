@@ -1,6 +1,7 @@
 package adt.bst.extended;
 
 import adt.bst.BSTImpl;
+import adt.bst.BSTNode;
 
 /**
  * Note que esta classe estende sua implementacao de BST (BSTImpl).
@@ -11,14 +12,30 @@ public class FloorCeilBSTImpl extends BSTImpl<Integer> implements FloorCeilBST {
 
 	@Override
 	public Integer floor(Integer[] array, double numero) {
-		//TODO Implemente seu codigo aqui
-		throw new UnsupportedOperationException("Not implemented yet!");
+		Integer floor = null;
+		for (Integer element:array) {
+			this.insert(element);
+		}
+		return floor;
+	}
+
+	private Integer floor(BSTNode<Integer> node, Integer element) {
+		Integer floor = null;
+		return floor;
 	}
 
 	@Override
 	public Integer ceil(Integer[] array, double numero) {
-		//TODO Implemente seu codigo aqui
-		throw new UnsupportedOperationException("Not implemented yet!");
+		Integer ceil = null;
+		for (Integer element:array) {
+			this.insert(element);
+		}
+		return ceil;
+	}
+
+	private Integer recursiveCeil(BSTNode<Integer> node, Integer element) {
+		Integer ceil = null;
+		return ceil;
 	}
 
 }
